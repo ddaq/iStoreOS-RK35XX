@@ -10,6 +10,14 @@
 # Modify default IP
 sed -i 's/192.168.100.1/192.168.2.1/g' package/base-files/files/bin/config_genera
 
+echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+#echo 'src-git pushbot https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot' >>feeds.conf.default
+#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+echo 'src-git syncthing https://github.com/syncthing/syncthing' >>feeds.conf.default
+echo 'src-git diskman https://github.com/immortalwrt/luci/tree/master/applications/luci-app-diskman' >>feeds.conf.default
+echo 'src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages' >>feeds.conf.default
+echo 'src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall' >>feeds.conf.defaul
+
 # enable rk3568 model adc keys
 #cp -f $GITHUB_WORKSPACE/configfiles/adc-keys.txt adc-keys.txt
 #! grep -q 'adc-keys {' package/boot/uboot-rk35xx/src/arch/arm/dts/rk3568-easepi.dts && sed -i '/\"rockchip,rk3568\";/r adc-keys.txt' package/boot/uboot-rk35xx/src/arch/arm/dts/rk3568-easepi.dts
