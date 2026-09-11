@@ -7,6 +7,9 @@
 # Blog: https://p3terx.com
 #===============================================
 
+# Modify default IP
+sed -i 's/192.168.100.1/192.168.2.1/g' package/base-files/files/bin/config_genera
+
 # enable rk3568 model adc keys
 #cp -f $GITHUB_WORKSPACE/configfiles/adc-keys.txt adc-keys.txt
 #! grep -q 'adc-keys {' package/boot/uboot-rk35xx/src/arch/arm/dts/rk3568-easepi.dts && sed -i '/\"rockchip,rk3568\";/r adc-keys.txt' package/boot/uboot-rk35xx/src/arch/arm/dts/rk3568-easepi.dts
