@@ -10,13 +10,20 @@
 # Modify default IP
 sed -i 's/192.168.100.1/192.168.2.1/g' package/base-files/files/bin/config_genera
 
-echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-#echo 'src-git pushbot https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot' >>feeds.conf.default
-#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo 'src-git syncthing https://github.com/syncthing/syncthing' >>feeds.conf.default
-echo 'src-git diskman https://github.com/immortalwrt/luci/tree/master/applications/luci-app-diskman' >>feeds.conf.default
-echo 'src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages' >>feeds.conf.default
-echo 'src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall' >>feeds.conf.defaul
+# PassWall 依赖包
+echo 'src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main' >> feeds.conf.default
+
+# PassWall LuCI
+echo 'src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main' >> feeds.conf.default
+
+# PassWall2
+echo 'src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2.git;main' >> feeds.conf.default
+
+# Helloworld
+echo 'src-git helloworld https://github.com/fw876/helloworld.git;master' >> feeds.conf.default
+
+# Diskman
+echo 'src-git diskman https://github.com/lisaac/luci-app-diskman.git;master' >> feeds.conf.default
 
 # enable rk3568 model adc keys
 #cp -f $GITHUB_WORKSPACE/configfiles/adc-keys.txt adc-keys.txt
